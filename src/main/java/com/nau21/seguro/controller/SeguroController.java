@@ -41,7 +41,11 @@ public class SeguroController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
+    @GetMapping("/ping")
+    public String ping() {
+        return "ok";
+    }
+    
     @DeleteMapping("/clientes/{id}")
     public ResponseEntity<Void> apagar(@PathVariable Long id) {
 
